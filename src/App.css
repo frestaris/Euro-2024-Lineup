@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #003ce8;
+}
+.container {
+  display: flex;
+}
+.Sidebar{
+width: 20%;
+}
+.Content{
+width: 60%;
+}
+.RightSidebar{
+width: 20%;
+}
