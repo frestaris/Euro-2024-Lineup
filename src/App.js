@@ -3,6 +3,7 @@ import TeamSelection from './components/TeamSelection';
 import FormationDisplay from './components/FormationDisplay';
 import PlayerList from './components/PlayerList';
 import Header from './components/Header'
+import Footer from './components/Footer';
 import teamsData from './data';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
           <PlayerList players={selectedTeam ? selectedTeam.players : null} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

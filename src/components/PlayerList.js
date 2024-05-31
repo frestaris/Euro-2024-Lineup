@@ -1,23 +1,31 @@
-// src/components/PlayerList.js
-import React from 'react';
+import React, { useState } from 'react';
 import './PlayerList.css';
 
 function PlayerList({ players }) {
-  if (!players) {
-    return <div className="PlayerList">No team selected</div>;
-  }
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <div className="PlayerList">
-      <h2>Players</h2>
-      <ul>
-        {Object.values(players).map((player, index) => (
-          <li key={index}>
-            {player.number} - {player.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className={`ham-menu ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <div className={`PlayerList ${menuOpen ? 'open' : ''}`}>
+        <h2>Players</h2>
+        <ul>
+          {players && Object.values(players).map((player, index) => (
+            <li key={index}>
+              {player.number}. {player.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 

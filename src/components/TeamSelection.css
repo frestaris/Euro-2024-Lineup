@@ -1,31 +1,89 @@
 .TeamSelection {
-    width: 200px; /* Adjust the width as needed */
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-    background-color: #f8f9fa;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .TeamSelection h2 {
-    margin-top: 0;
-  }
-  
-  .TeamSelection ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .TeamSelection li {
-    padding: 8px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .TeamSelection li:hover {
-    background-color: #e9ecef;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: -200px;
+  bottom: 0;
+  width: 200px;
+  overflow-y: auto;
+  background-color: transparent;
+  color: white;
+  margin-top: 1rem;
+  padding: 20px;
+  transition: left 0.3s;
+  z-index: 999;
+}
+.TeamSelection h2 {
+  margin-top: 0;
+}
+
+.TeamSelection ul {
+  list-style-type: none;
+}
+
+.TeamSelection li {
+  color: white;
+  background-color: transparent;
+
+  font-size: 1.1rem;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.TeamSelection li:hover,
+.TeamSelection li.selected {
+  transform: scale(1.8);
+}
+
+/* Hide scrollbar for WebKit browsers */
+.TeamSelection::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.TeamSelection::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.TeamSelection {
+  scrollbar-width: none;
+}
+
+.TeamSelection {
+  -ms-overflow-style: none;
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.TeamSelection.open {
+  left: 0;
+}
+.hamburger-menu.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}

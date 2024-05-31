@@ -1,19 +1,19 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
+  font-weight: 600;
   background-color: #003ce8;
+  font-family: "Rubik", sans-serif;
 }
-.container {
-  display: flex;
-}
-.Sidebar{
-width: 20%;
-}
-.Content{
-width: 60%;
-}
-.RightSidebar{
-width: 20%;
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
 }

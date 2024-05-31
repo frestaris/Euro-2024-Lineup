@@ -1,25 +1,65 @@
-  .PlayerList {
-    width: 200px; /* Adjust the width as needed */
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow-y: auto;
-    background-color: #f8f9fa;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-  }
-  
-  .PlayerList h2 {
-    margin-top: 0;
-  }
-  
-  .PlayerList ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .PlayerList li {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-  }
+.PlayerList {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  bottom: 0;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s;
+  z-index: 999;
+}
+
+.PlayerList.open {
+  right: 0;
+}
+
+.PlayerList h2 {
+  margin-top: 0;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.PlayerList ul {
+  list-style-type: none;
+}
+
+.PlayerList li {
+  color: white;
+  background-color: transparent;
+  text-align: left;
+  padding: 1rem;
+}
+
+/* Hamburger-menu */
+
+.ham-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.ham-menu.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(-45deg);
+}
+
+.ham-menu.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(45deg);
+}
